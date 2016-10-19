@@ -1,0 +1,52 @@
+<% include ../templates/header %>
+    <div class="col-md-10">
+        <div class="content-box-large">
+            <div class="panel-heading">
+                <a class="btn btn-primary" href="../jurusan/tambah">Tambah Data</a>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>NO</th>
+                                <th>KD Jurusan</th>
+                                <th>Jurusan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if(data.length) {
+                                for(var i = 0; i < data.length; i++) { %>
+                                <tr>
+                                    <td>
+                                        <%= (i+1) %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].kodeJurusan %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].namaJurusan %>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-primary" href="../jurusan/ubah/<%=data[i].kodeJurusan %>">Ubah</a>
+                                        <a class="btn btn-default" href="../jurusan/hapus/<%=data[i].kodeJurusan %>">Hapus</a>
+                                    </td>
+                                </tr>
+                                <% }
+                                }else{ %>
+                                    <tr>
+                                        <td colspan="5">
+                                            <h1>
+                                                DATA MASIH KOSONG SILAHKAN DI ISI DULU
+                                            </h1>
+                                        </td>
+                                    </tr>
+                                    <%
+                                } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+<% include ../templates/footer %>

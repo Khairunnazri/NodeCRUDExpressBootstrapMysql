@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var user = require('./routes/index');
 var mahasiswa = require('./routes/mahasiswa');
+var jurusan = require('./routes/jurusan');
 
 var koneksi = require('express-myconnection');
 var mysql = require('mysql');
@@ -49,6 +50,14 @@ app.post('/mahasiswa/tambah', mahasiswa.tambahMhsSimpan);
 app.get('/mahasiswa/ubah/:nim', mahasiswa.ubahMhs);
 app.post('/mahasiswa/ubah/:nim', mahasiswa.ubahMhsSimpan);
 app.get('/mahasiswa/hapus/:nim', mahasiswa.hapusMhs);
+
+// Routes Jurusan
+app.get('/jurusan', jurusan.detilJurusan);
+app.get('/jurusan/tambah', jurusan.tambahJurusan);
+app.post('/jurusan/tambah', jurusan.tambahJurusanSimpan);
+app.get('/jurusan/ubah/:kodeJurusan', jurusan.ubahJurusan);
+app.post('/jurusan/ubah/:kodeJurusan', jurusan.ubahJurusanSimpan);
+app.get('/jurusan/hapus/:kodeJurusan', jurusan.hapusJurusan);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

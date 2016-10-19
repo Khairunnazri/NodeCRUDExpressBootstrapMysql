@@ -1,0 +1,39 @@
+<% include ../templates/header %>
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="content-box-large">
+                    <div class="panel-heading">
+                        <div class="panel-title"><%= title %></div>
+                        <div class="panel-options">
+                            <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+                            <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form" method="post" action="tambah">
+                            <div class="form-group">
+                                <label for="kodeJurusan" class="col-sm-3 control-label">Kode Jurusan :</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="kodeJurusan" class="form-control" id="kodeJurusan" placeholder="Kode Jurusan">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="namaJurusan" class="col-sm-3 control-label">Jurusan :</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="namaJurusan" class="form-control" id="namaJurusan" placeholder="Jurusan">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                    <a class="btn btn-default" href="/jurusan">Batal</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% include ../templates/footer %>
